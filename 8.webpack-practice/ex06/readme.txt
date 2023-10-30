@@ -1,8 +1,7 @@
-ex04: css module bundling (loader가 필요!)
-
+ex06: image module bundling (loader가 필요!!)
 
 1. 패키지 설치
-$ npm i -D webpack webpack-cli webpack-dev-server css-loader style-loader
+$ npm i -D webpack webpack-cli webpack-dev-server css-loader style-loader sass-loader node-sass
 
 2. 번들링 환경(webpack.config.js) 설정
     - entry
@@ -11,11 +10,12 @@ $ npm i -D webpack webpack-cli webpack-dev-server css-loader style-loader
     - module
             module:{
                 rules:[{
-                 test: /\.css$/i, 
-                 use:['style-loader', 'css-loader']
+                test: /\.(c|sc|sa)ss$/i, 
+                use:['style-loader', 'css-loader','sass-loader']
             }]
     },
-
+    -
+    
 3. 스크립팅
 "scripts": {
     "start": "npx webpack serve --progress",
