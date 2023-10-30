@@ -3,5 +3,3 @@ function App(){
     App.textContent = "hello world :D";
     return App;
 }
-
-document.getElementById('root').appendChild(App());
