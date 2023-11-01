@@ -1,6 +1,6 @@
 import React from "react";
 import Kanbanboard from "./Kanbanboard";
-// import './assets/css/App.css';
+import './assets/scss/App.scss';
 import data from './assets/json/data.js';
 function App(){
     console.log(data);
