@@ -1,8 +1,20 @@
 ex02: Component Styling
     - inline styling
     - Normal CSS 
+        : css-loader option:{module: false}  기본값
+          실행
+          $ npm run debug scr=03 css-module=false
+
     - CSS Module I    **** 중요
+        : css-loader option:{module: true}  
+          실행
+          npm run debug scr=03
+
     - CSS Module II   **** 중요
+        : css-loader option:{module: true}  
+          실행
+          npm run debug scr=04
+
     - SASS & SCSS
     - CSS in JS: Styled Component  **** 편함..!!
     - React Modal
