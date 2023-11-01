@@ -16,6 +16,9 @@ ex02: Component Styling
           npm run debug scr=04
 
     - SASS & SCSS
+        : css-loader option:{module: true}  
+          실행
+          npm run debug scr=05
     - CSS in JS: Styled Component  **** 편함..!!
     - React Modal
     - Modal: Material UI
