@@ -17,3 +17,7 @@ kanban-board
 emaillist 
     |-- backend
     |-- frontend
+
+mysite07 (guestbook, gallery)
+    |-- backend   (spring boot + .yaml)
+    |-- frontend  (js + react + webpack + babel)

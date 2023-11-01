@@ -11,7 +11,7 @@ function FoodList({foods}) {
     //     return e * e;
     // });
     // console.log(a2);
-
+    
     return (
         <ul>
             {
