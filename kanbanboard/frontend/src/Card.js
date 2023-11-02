@@ -1,10 +1,14 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styles from './assets/scss/Card.scss';
 import TaskListItem from './TaskListItem';
 function Card({card}) {
-    return (
-        <div className={styles.Card}>
-          <div className={styles.Card__Title}>{card.title}</div>
+  const [onClick, setOnClick] = useState(true);
+  
+  return (
+      <div className={styles.Card}>
+        <div className={ onClick ? styles.Card__Title:styles.Card__Title__open} onClick={()=>{setOnClick(!onClick)}}>{card.title}</div>
+        {
+          !onClick ? 
           <div className={styles.Card__Details}>
             {card.description}
             <div className={styles.TaskList}>
@@ -14,10 +18,10 @@ function Card({card}) {
                 }
               </ul>
             </div>
-
-          </div>
-        </div>
-    );
+          </div>:<></>
+        }
+      </div>
+  );
 }
 
 export default Card;

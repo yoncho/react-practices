@@ -1,8 +1,7 @@
 import React from 'react';
-import data from './assets/json/data.js';
 import Cardlist from './Cardlist.js';
 import styles from './assets/scss/Kanbanboard.scss';
-function Kanbanboard(props) {
+function Kanbanboard({data}) {
     const categorys = ['ToDo', 'Doing', 'Done'];
 
     return (
