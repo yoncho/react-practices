@@ -17,8 +17,8 @@
 
         &:before { display: inline-block; width: 1em; content: '▸'; }
     }
-    .Card__Title--is-open:before { content: '▾'; }
+    .Card__Title__open:before { content: '▾'; }
     
     .TaskList__Task:first-child    { margin-top: 10px; padding-top: 10px; border-top: dashed 1px #ddd; }
-    .TaskList__Task--remove:after  { display: inline-block; color: #d66; content: '✖'; }
+    .TaskList__Task__remove:after  { display: inline-block; color: #d66; content: '✖'; }
 }

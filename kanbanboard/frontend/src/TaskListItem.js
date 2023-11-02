@@ -5,7 +5,7 @@ function TaskListItem({task}) {
         <li className={styles.TaskList__Task}>
             <input type='checkbox' checked={task.done} onChange={(e)=>{console.log(e.target)}} />
             {task.name}
-            <a href='#' className={styles['TaskList__Task--remove']}></a>
+            <a href='#' className={styles['TaskList__Task__remove']}></a>
         </li>
     );
 }
