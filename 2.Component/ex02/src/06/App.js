@@ -3,7 +3,7 @@ import styles from './assets/scss/App.scss';
 import styled from 'styled-components';
 const StyledH1 = styled.h1`
     width: 180px;
-    font-size: 12px;l
+    font-size: 12px;
     text-align: center;
     margin: 100px auto;
     padding: 20px;

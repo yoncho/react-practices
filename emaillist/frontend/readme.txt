@@ -3,7 +3,7 @@ Emaillist: Frontend
     - 개발툴
     $ npm i -D webpack webpack-cli webpack-dev-server css-loader style-loader sass-loader node-sass babel-loader @babel/core @babel/preset-env @babel/preset-react case-sensitive-paths-webpack-plugin
      - 라이브러리
-    $ npm i react react-dom prop-types 
+    $ npm i react react-dom prop-types styled-components
 2. 설정
     - webpack.config.js
     - babel.config.json
