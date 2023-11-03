@@ -7,7 +7,7 @@ function Card({card}) {
   return (
       <div className={styles.Card}>
         <div className={ showDetail ? styles.Card__Title:styles.Card__Title__open} onClick={()=>{setShowDetail(!showDetail)}}>{card.title}</div>
-        {
+        { // [styles.Card__Title, styles.Card__Title__open].join(' ');                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
           !showDetail ? 
           <div className={styles.Card__Details}>
             {card.description}

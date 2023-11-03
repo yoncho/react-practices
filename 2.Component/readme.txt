@@ -7,5 +7,5 @@ ex01: property
 ex02: Component Styling
 ex03: React Event
 ex04: State
-ex05: Component LifeCycle
+ex05: Component LifeCycle ()
 ex06: Immutability(불변성) of Component`s State 
