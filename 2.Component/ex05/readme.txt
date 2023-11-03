@@ -13,8 +13,12 @@ ex05: Component LifeCycle
             5. componentDidUpdate ***
         - Lifecycle III : unmount
             1. componentWillUnmount() ***
-    - Functional Component: alternate(대체) - useEffect
 
+    - Functional Component: alternate(대체) - useEffect
+            1. getDerivedStateFromProps 대체 
+            2. after rendering (componentDidUpdate 대체)
+            3. componentDidMount, componentWillUnmount 
+            4. 변경된 상태에 의존적으로 코드 실행이 가능하다.
 ==========================================================================================================================
 1. 설치
     - 개발툴
