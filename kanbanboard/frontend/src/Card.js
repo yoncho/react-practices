@@ -2,13 +2,13 @@ import React, {useState} from 'react';
 import styles from './assets/scss/Card.scss';
 import TaskListItem from './TaskListItem';
 function Card({card}) {
-  const [onClick, setOnClick] = useState(true);
+  const [showDetail, setShowDetail] = useState(true);
   
   return (
       <div className={styles.Card}>
-        <div className={ onClick ? styles.Card__Title:styles.Card__Title__open} onClick={()=>{setOnClick(!onClick)}}>{card.title}</div>
+        <div className={ showDetail ? styles.Card__Title:styles.Card__Title__open} onClick={()=>{setShowDetail(!showDetail)}}>{card.title}</div>
         {
-          !onClick ? 
+          !showDetail ? 
           <div className={styles.Card__Details}>
             {card.description}
             <div className={styles.TaskList}>
@@ -18,6 +18,9 @@ function Card({card}) {
                 }
               </ul>
             </div>
+            <input type='text'
+                placeholder={'태스크 추가'}
+                className={styles.TaskList__add_task}></input>
           </div>:<></>
         }
       </div>

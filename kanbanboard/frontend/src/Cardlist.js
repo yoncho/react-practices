@@ -8,7 +8,7 @@ function Cardlist({status, cards}) {
             <h1>{status}</h1>
             <ul>
             {
-                cards.map((card, i)=> <Card key={i} card={card}/>)
+                cards.map((card)=> <Card key={card.no} card={card}/>)
             }
             </ul>
             

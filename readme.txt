@@ -1,6 +1,6 @@
 React Practices
 1. 기본개념(basics) **
-2. 컴포넌트(component) ***
+2. 컴포넌트(component) *** 
 3. 라우팅(routing) **
 4. Flux: Redux *
 5. Testing(Rest)

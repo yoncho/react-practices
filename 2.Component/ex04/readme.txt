@@ -3,7 +3,7 @@ ex04: State
         this.state 안에 여러 데이터를 가질 수 있음.
         함수 컴포넌트의경우 useState 훅(hook)을 사용! 초기화 const[val,setVal] = useState(begin) 과 
         같이 val는 데이터/ setVal는val의 상태(값)을 컨트롤하는 함수! 
-    - 제어 컴포넌트
+    - 제어 컴포넌트 : 사용자 입력을 제어할 수 있음..!!
     - 비제어 컴포넌트
     - 상태 컴포넌트 vs 순수(pure, dumb) 컴포넌트
     - data flow: bottom -> top
