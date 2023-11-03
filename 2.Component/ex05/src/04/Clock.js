@@ -4,9 +4,6 @@ import SessionAmPm from "./SessionAmPm";
 import './assets/scss/Clock.scss';
 
 export default function Clock({message, hours, minutes, seconds}) {
-
-
-
     return (
         <div className={'clock-display'}>
             <h2>{message}</h2>
@@ -14,7 +11,7 @@ export default function Clock({message, hours, minutes, seconds}) {
                 <SevenSegmentLED number={hours} colon={true}/>
                 <SevenSegmentLED number={minutes} colon={true}/>
                 <SevenSegmentLED number={seconds} colon={false}/>
-                <SessionAmPm session={hours > 12 ? 'pm' : 'am'}/>
+                <SessionAmPm session={parseInt(hours) > 12 ? 'pm' : 'am'}/>
             </div>
         </div>
     );
