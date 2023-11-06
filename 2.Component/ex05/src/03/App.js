@@ -14,8 +14,8 @@ export default class App extends Component {
         setInterval((() => {
             this.updateCurrentTime();
         }).bind(this), 1000);
-      }
-    
+    }
+
     updateCurrentTime() {
         this.setState({ currentTime: this._getCurrnetTime() });
     }
@@ -33,7 +33,7 @@ export default class App extends Component {
     render() {
         return (
             <div className='clock-display'>
-                <h2>ex05 - Component LifeCycle Practice</h2>
+                <h2>ex05 - Component LifeCycle Practice:</h2>
                     <Clock 
                         hours={('00'+ this.state.currentTime.hours).slice(-2)}
                         minutes={('00'+ this.state.currentTime.minutes).slice(-2)}

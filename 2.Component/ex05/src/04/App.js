@@ -9,17 +9,23 @@ export default function App() {
     useEffect(()=>{
         const tickInterval = setInterval(()=>{
             setTime(new Date());
-            setTicks(ticks+1);
+            setTicks(x => x+1);
         }, 1000);
 
         return ()=>clearInterval(tickInterval);
-    },[ticks])
+    }, [])
     
     return (
-        <Clock
-        message={`ex05: useEffect Hook ticks: ${ticks}`}
-        hours={('00'+time.getHours()).slice(-2)}
-        minutes={('00'+time.getMinutes()).slice(-2)}
-        seconds={('00'+time.getSeconds()).slice(-2)}/>
+        <>
+        {
+            ticks % 10 === 0 ?
+            null:
+            <Clock
+            message={`ex05: useEffect Hook ticks: ${ticks}`}
+            hours={('0'+time.getHours()).slice(-2)}
+            minutes={('0'+time.getMinutes()).slice(-2)}
+            seconds={('0'+time.getSeconds()).slice(-2)}/>
+        }
+        </>
     );
 }
