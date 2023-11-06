@@ -13,3 +13,4 @@ public class EmaillistVo {
 	private String lastName;
 	private String email;
 }
+
