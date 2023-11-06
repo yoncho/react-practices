@@ -41,13 +41,13 @@
 			<artifactId>mybatis-spring-boot-starter</artifactId>
 			<version>2.2.0</version>
 		</dependency>
-		
-		<!-- lombok (auto getter/setter)--> 
+
+		<!-- lombok (auto getter/setter)-->
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 		</dependency>
-		
+
 		<!-- mariadb jdbc driver -->
 		<dependency>
 			<groupId>org.mariadb.jdbc</groupId>
@@ -70,6 +70,10 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
 					<excludes>
+						<exclude>
+							<groupId>org.projectlombok</groupId>
+							<artifactId>lombok</artifactId>
+						</exclude>
 						<exclude>
 							<groupId>org.springframework.boot</groupId>
 							<artifactId>spring-boot-devtools</artifactId>
