@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import styles from './assets/scss/RegisterForm.scss';
 function RegisterForm({addEmail}) {
-    
+    const refForm = useRef(null);
 
     return (
-        <form className={styles.RegisterForm} onSubmit={(e)=>{
+        <form ref={refForm} className={styles.RegisterForm} onSubmit={(e)=>{
             e.preventDefault();
             const email = {
                 firstName : e.target.firstName.value,
@@ -12,6 +12,7 @@ function RegisterForm({addEmail}) {
                 email : e.target.email.value
             }
             addEmail(email);
+            refForm.current.reset();
             console.log(email);
         }}>
             <input type='text' name='firstName' placeholder='성' className={styles.InputFirstName} />
