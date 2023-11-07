@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import styles from './assets/scss/Card.scss';
-import TaskListItem from './TaskListItem';
+
+import TaskList from './TaskList';
 function Card({card}) {
   const [showDetail, setShowDetail] = useState(true);
   
@@ -11,16 +12,7 @@ function Card({card}) {
           !showDetail ? 
           <div className={styles.Card__Details}>
             {card.description}
-            <div className={styles.TaskList}>
-              <ul>
-                {
-                    card.tasks.map((task, i)=><TaskListItem key={i} task={task}/>)
-                }
-              </ul>
-            </div>
-            <input type='text'
-                placeholder={'태스크 추가'}
-                className={styles.TaskList__add_task}></input>
+            <TaskList no={card.no}/>
           </div>:<></>
         }
       </div>

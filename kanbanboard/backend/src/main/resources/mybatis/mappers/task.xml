@@ -29,6 +29,12 @@
 			   set done=#{done}
 			 where no=#{no}	
 	  	]]>	
-	</update>	
+	</update>
+	
+	<delete id="delete" parameterType="long">
+		<![CDATA[
+			delete from task where no=#{no}	
+	  	]]>	
+	</delete>		
 		
 </mapper>
