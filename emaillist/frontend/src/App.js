@@ -7,15 +7,6 @@ import Emaillist from "./Emaillist";
 // import data from './data';
 function App(){
     const [emails, setEmails] = useState(null);
-    const searchEmail = (keyword)=>{
-        console.log(keyword);
-        
-        const newEmails = data.filter(function(email) {
-            return (email.firstName+email.lastName).indexOf(keyword) !== -1 ||  email.email.indexOf(keyword) !== -1;
-        });
-        setEmails(newEmails);
-        
-    };
     
     const addEmail = async(email)=>{
         const response = await fetch('/api', {
@@ -39,9 +30,9 @@ function App(){
         setEmails(updateEmail);
     };
 
-    const fetchList = async()=>{
+    const fetchEmails = async(keyword)=>{
         try{
-            const response = await fetch('/api', {
+            const response = await fetch(`/api?kw=${keyword ? keyword:""}`, {
                 method: 'get',
                 headers: {
                     'Content-Type': 'application/json',
@@ -68,14 +59,14 @@ function App(){
     };
 
     useEffect(()=>{
-        fetchList();
+        fetchEmails();
     },[]);
 
     return (
         <div id={'App'}>
             Emaillist
             <RegisterForm addEmail={addEmail}/>
-            <SearchBar searchEmail={searchEmail}/>
+            <SearchBar fetchEmails={fetchEmails}/>
             {
                 emails === null ?
                 null:
