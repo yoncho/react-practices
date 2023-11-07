@@ -2,7 +2,7 @@ React Practices - Routing
 
 ex01: React Router Basic I: Implemented in a Simple Way(hashchange event driven)
 ex02: React Router Basic II: HTML5 history API
-ex03: React Router Basic III: HashRouter &amp; BrowserRouter
+ex03: React Router Basic III: HashRouter & BrowserRouter
 ex04: React Router Basic V: Link VS NavLink
 ex05: Styling &amp; Semantic Markup
 ex06: Composition
@@ -19,7 +19,7 @@ Install Dependency
     - 개발툴
     $ npm i -D webpack webpack-cli webpack-dev-server css-loader style-loader sass-loader node-sass babel-loader @babel/core @babel/preset-env @babel/preset-react case-sensitive-paths-webpack-plugin @babel/plugin-transform-runtime @babel/plugin-syntax-throw-expressions
      - 라이브러리
-    $ npm i react react-dom prop-types react-addons-update styled-components react-router
+    $ npm i react react-dom prop-types react-addons-update styled-components react-router react-router-dom
 
 2. 설정
     - webpack.config.js
