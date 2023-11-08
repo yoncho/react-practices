@@ -52,6 +52,9 @@ module.exports = function(env){
             proxy: {
                 '/api': 'http://localhost:8080'
             },
+            static: {
+                directory: path.resolve('./public')
+            },
             historyApiFallback: true
         }
     }
