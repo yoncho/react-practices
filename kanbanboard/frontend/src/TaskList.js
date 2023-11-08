@@ -2,12 +2,39 @@ import React, { useEffect, useState } from 'react';
 import styles from './assets/scss/Task.scss';
 import TaskListItem from './TaskListItem';
 function TaskList({no}) {
+    const initTask = {no:0, name:'', done:'N', cardNo:no};
     const [tasks, setTasks] = useState([]);
-    const [newTask, setNewTask] = useState({no:0, name:'', done:'N', cardNo:no})
+    const [newTask, setNewTask] = useState(initTask)
 
     useEffect(()=>{
         fetchTasks();
     }, [newTask]);
+
+    const changeTaskDone = async(taskNo, done)=>{
+        try{
+            const response = await fetch(`/api/task/${taskNo}`, {
+                method: 'put',
+                headers:{
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                    'Accept': 'application/json'
+                },
+                body: `done=${done}`
+            });
+
+            if(!response.ok){
+                throw new Error(`${response.status} ${response.statusText}`);
+            }
+            const json = await response.json();
+
+            if(json.result !== 'success'){
+                throw new Error(`${json.result} ${json.message}`);
+            }
+
+            fetchTasks();
+        }catch(err){
+            console.error(err);
+        }
+    }
 
     const deleteTask = async(taskNo)=>{
         try{
@@ -22,14 +49,7 @@ function TaskList({no}) {
             if(!response.ok){
                 throw new Error(`${response.status} ${response.statusText}`);
             }
-            console.log(response);
             fetchTasks();
-            // const json = await response.json();
-            // console.log(json);
-            // if(json.result !== 'success'){
-            //     throw new Error(`${json.result} ${json.message}`);
-            // }
-            // setNewTask({no:0, name:'', done:'N', cardNo:no});
         }catch(err){
             console.error(err);
         }
@@ -54,7 +74,7 @@ function TaskList({no}) {
             if(json.result !== 'success'){
                 throw new Error(`${json.result} ${json.message}`);
             }
-            setNewTask({no:0, name:'', done:'N', cardNo:no});
+            setNewTask(initTask);
         }catch(err){
             console.error(err);
         }
@@ -79,7 +99,6 @@ function TaskList({no}) {
             if(json.result !== 'success'){
                 throw new Error(`${json.result} ${json.message}`);
             }
-            console.log(json.data);
             setTasks(json.data);
         }catch(err){
             console.error(err);
@@ -91,7 +110,7 @@ function TaskList({no}) {
             <div className={styles.TaskList}>
                 <ul>
                 {
-                    tasks.map((task, i)=><TaskListItem key={i} task={task} deleteTask={deleteTask}/>)
+                    tasks.map((task, i)=><TaskListItem key={i} task={task} deleteTask={deleteTask} changeTaskDone={changeTaskDone}/>)
                 }
                 </ul>
             </div>

@@ -30,7 +30,6 @@ function Kanbanboard(props) {
             console.log(json.data);
 
             setData(json.data);
-
         }catch(err){
             console.error(err);
         }

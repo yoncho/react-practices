@@ -2,6 +2,17 @@ import React, {useState} from 'react';
 import styles from './assets/scss/Card.scss';
 
 import TaskList from './TaskList';
+import update from 'react-addons-update';
+/*
+  const index = tasks.findIndex((task)=>{return task.no === {json.data.no}});
+  const newTasks = update(tasks, {
+    [index]: {
+      done: {
+        $set: json.data.done
+      }
+    }
+  })
+*/
 function Card({card}) {
   const [showDetail, setShowDetail] = useState(true);
   
