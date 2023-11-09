@@ -64,4 +64,19 @@ server:
       encoding:
          charset: UTF-8
          enabled: true
+---
+# production profile: spring boot configuration
+spring:
+   config:
+      activate:
+         on-profile: production
+
+# server
+server:
+   port: 8088
+   servlet:
+      context-path: /
+      encoding:
+         charset: UTF-8
+         enabled: true
          
