@@ -6,8 +6,9 @@ ex03: React Router Basic III: HashRouter & BrowserRouter
 ex04: React Router Basic V: Link VS NavLink
 ex05: Styling & Semantic Markup
 ex06: Composition       ({children})
-ex07: Nesting Routes    (<Outlet/>)
-ex08: useRoute          (Hooks)
+ex07: useRoute          (Hooks)
+ex08: Nesting Routes    (<Outlet/>)
+
 
 Install Dependency
 1. react-router: 6.0.x(2021.6 beta)

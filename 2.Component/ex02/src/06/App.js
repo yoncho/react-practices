@@ -1,6 +1,7 @@
 import React from "react";
 import styles from './assets/scss/App.scss';
 import styled from 'styled-components';
+
 const StyledH1 = styled.h1`
     width: 180px;
     font-size: 12px;
