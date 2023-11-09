@@ -25,3 +25,4 @@
 3-2. deploy: Publish Over SSH 플러그인(Jenkins)
     1) Publish Over SSH 플러그인 설치
     2) Dashboard > Jenkins 관리 > System > Public Over SSH
+        - 서비스 실행 서버 (ssh server) 등록 작업 
