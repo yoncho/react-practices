@@ -5,6 +5,7 @@ spring:
    profiles:
       active: development
       
+      
 ---
 # common spring boot configuration
 spring:
@@ -20,19 +21,16 @@ spring:
       check-template-location: true
       mode: HTML5
       suffix : .html
-      cache : false   
-      
-# mybatis
+      cache : false
+
 mybatis:
    config-location: classpath:mybatis/configuration.xml
 
-# logging
 logging:
    pattern:
       console: "%d{HH:mm:ss.SSS} [%thread] %-5level %logger{5} - %msg%n"
    level:
       root: INFO
-
 
 
 
@@ -42,23 +40,20 @@ spring:
    config:
       activate:
          on-profile: development
-         
-   # devtools - live reload
+
    devtools:
       livereload:
          enabled: true
-          
-   #datasource
+                     
    datasource:
       driver-class-name: org.mariadb.jdbc.Driver
-      url: jdbc:mariadb://192.168.0.181:3307/webdb?charset=utf8
-      username: mysite
-      password: mysite
+      url: jdbc:mariadb://192.168.0.172:3307/webdb?charset=utf8
+      username: webdb
+      password: webdb
       hikari:
          minimum-idle: 10
          maximum-pool-size: 20
-
-# server
+   
 server:
    port: 8080
    servlet:
@@ -67,6 +62,8 @@ server:
          charset: utf-8
          enabled: true
          
+
+
 ---
 # production profile: spring boot configuration
 spring:
@@ -74,11 +71,19 @@ spring:
       activate:
          on-profile: production
 
-# server
+   datasource:
+      driver-class-name: org.mariadb.jdbc.Driver
+      url: jdbc:mariadb://192.168.0.181:3307/webdb?charset=utf8
+      username: mysite
+      password: mysite
+      hikari:
+         minimum-idle: 10
+         maximum-pool-size: 20
+         
 server:
    port: 8088
    servlet:
       context-path: /
       encoding:
          charset: UTF-8
-         enabled: true        
+         enabled: true
